@@ -1,15 +1,15 @@
-const fs = require('fs'),
-	path = require('path');
+const fs = require("fs"),
+	path = require("path");
 
 class Cache {
 	constructor(name) {
-		this.storePath = path.join('.', 'cache', `${name}`);
+		this.storePath = path.join(".", "cache", `${name}`);
 	}
 
 	getItem(key) {
-		let obj = fs.readFileSync(this.storePath, 'utf8');
+		let obj = fs.readFileSync(this.storePath, "utf8");
 
-		if (obj && obj != '') {
+		if (obj && obj != "") {
 			return JSON.parse(obj);
 		}
 

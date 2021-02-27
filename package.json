@@ -16,9 +16,9 @@
 		"npm": ">=6.0.0"
 	},
 	"scripts": {
-		"start": "node server.js",
+		"start": "NODE_ENV=production node server.js",
 		"debug": "nodemon --inspect=5858 server.js",
-		"dev": "HOMO=true node server.js"
+		"dev": "node server.js"
 	},
 	"devDependencies": {
 		"nodemon": "1.19.1"

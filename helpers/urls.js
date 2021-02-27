@@ -13,6 +13,8 @@ class AfipUrls {
 	constructor() {
 		this.urls = afip_urls.HOMO;
 
+		console.log("HOMO", process.env.HOMO)
+
 		if (!process.env.HOMO) {
 			this.urls = afip_urls.PROD;
 		}

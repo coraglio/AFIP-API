@@ -1,0 +1,2580 @@
+{
+    "Service": {
+        "ServiceSoap": {
+            "FECAESolicitar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "FeCAEReq": {
+                        "FeCabReq": {
+                            "CantReg": "s:int",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetReq": {
+                            "FECAEDetRequest[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "ImpTotal": "s:double",
+                                "ImpTotConc": "s:double",
+                                "ImpNeto": "s:double",
+                                "ImpOpEx": "s:double",
+                                "ImpTrib": "s:double",
+                                "ImpIVA": "s:double",
+                                "FchServDesde": "s:string",
+                                "FchServHasta": "s:string",
+                                "FchVtoPago": "s:string",
+                                "MonId": "s:string",
+                                "MonCotiz": "s:double",
+                                "CbtesAsoc": {
+                                    "CbteAsoc[]": {
+                                        "Tipo": "s:int",
+                                        "PtoVta": "s:int",
+                                        "Nro": "s:long",
+                                        "Cuit": "s:string",
+                                        "CbteFch": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Tributos": {
+                                    "Tributo[]": {
+                                        "Id": "s:short",
+                                        "Desc": "s:string",
+                                        "BaseImp": "s:double",
+                                        "Alic": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Iva": {
+                                    "AlicIva[]": {
+                                        "Id": "s:int",
+                                        "BaseImp": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Opcionales": {
+                                    "Opcional[]": {
+                                        "Id": "s:string",
+                                        "Valor": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Compradores": {
+                                    "Comprador[]": {
+                                        "DocTipo": "s:int",
+                                        "DocNro": "s:long",
+                                        "Porcentaje": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "PeriodoAsoc": {
+                                    "FchDesde": "s:string",
+                                    "FchHasta": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECAESolicitarResult": {
+                        "FeCabResp": {
+                            "Cuit": "s:long",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "FchProceso": "s:string",
+                            "CantReg": "s:int",
+                            "Resultado": "s:string",
+                            "Reproceso": "s:string",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetResp": {
+                            "FECAEDetResponse[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "Resultado": "s:string",
+                                "Observaciones": {
+                                    "Obs[]": {
+                                        "Code": "s:int",
+                                        "Msg": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "CAE": "s:string",
+                                "CAEFchVto": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECompTotXRequest": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECompTotXRequestResult": {
+                        "RegXReq": "s:int",
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEDummy": {
+                "input": {},
+                "output": {
+                    "FEDummyResult": {
+                        "AppServer": "s:string",
+                        "DbServer": "s:string",
+                        "AuthServer": "s:string",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECompUltimoAutorizado": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "PtoVta": "s:int",
+                    "CbteTipo": "s:int"
+                },
+                "output": {
+                    "FECompUltimoAutorizadoResult": {
+                        "PtoVta": "s:int",
+                        "CbteTipo": "s:int",
+                        "CbteNro": "s:int",
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECompConsultar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "FeCompConsReq": {
+                        "CbteTipo": "s:int",
+                        "CbteNro": "s:long",
+                        "PtoVta": "s:int",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECompConsultarResult": {
+                        "ResultGet": {
+                            "Concepto": "s:int",
+                            "DocTipo": "s:int",
+                            "DocNro": "s:long",
+                            "CbteDesde": "s:long",
+                            "CbteHasta": "s:long",
+                            "CbteFch": "s:string",
+                            "ImpTotal": "s:double",
+                            "ImpTotConc": "s:double",
+                            "ImpNeto": "s:double",
+                            "ImpOpEx": "s:double",
+                            "ImpTrib": "s:double",
+                            "ImpIVA": "s:double",
+                            "FchServDesde": "s:string",
+                            "FchServHasta": "s:string",
+                            "FchVtoPago": "s:string",
+                            "MonId": "s:string",
+                            "MonCotiz": "s:double",
+                            "CbtesAsoc": {
+                                "CbteAsoc[]": {
+                                    "Tipo": "s:int",
+                                    "PtoVta": "s:int",
+                                    "Nro": "s:long",
+                                    "Cuit": "s:string",
+                                    "CbteFch": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Tributos": {
+                                "Tributo[]": {
+                                    "Id": "s:short",
+                                    "Desc": "s:string",
+                                    "BaseImp": "s:double",
+                                    "Alic": "s:double",
+                                    "Importe": "s:double",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Iva": {
+                                "AlicIva[]": {
+                                    "Id": "s:int",
+                                    "BaseImp": "s:double",
+                                    "Importe": "s:double",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Opcionales": {
+                                "Opcional[]": {
+                                    "Id": "s:string",
+                                    "Valor": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Compradores": {
+                                "Comprador[]": {
+                                    "DocTipo": "s:int",
+                                    "DocNro": "s:long",
+                                    "Porcentaje": "s:double",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "PeriodoAsoc": {
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Resultado": "s:string",
+                            "CodAutorizacion": "s:string",
+                            "EmisionTipo": "s:string",
+                            "FchVto": "s:string",
+                            "FchProceso": "s:string",
+                            "Observaciones": {
+                                "Obs[]": {
+                                    "Code": "s:int",
+                                    "Msg": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEARegInformativo": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "FeCAEARegInfReq": {
+                        "FeCabReq": {
+                            "CantReg": "s:int",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetReq": {
+                            "FECAEADetRequest[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "ImpTotal": "s:double",
+                                "ImpTotConc": "s:double",
+                                "ImpNeto": "s:double",
+                                "ImpOpEx": "s:double",
+                                "ImpTrib": "s:double",
+                                "ImpIVA": "s:double",
+                                "FchServDesde": "s:string",
+                                "FchServHasta": "s:string",
+                                "FchVtoPago": "s:string",
+                                "MonId": "s:string",
+                                "MonCotiz": "s:double",
+                                "CbtesAsoc": {
+                                    "CbteAsoc[]": {
+                                        "Tipo": "s:int",
+                                        "PtoVta": "s:int",
+                                        "Nro": "s:long",
+                                        "Cuit": "s:string",
+                                        "CbteFch": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Tributos": {
+                                    "Tributo[]": {
+                                        "Id": "s:short",
+                                        "Desc": "s:string",
+                                        "BaseImp": "s:double",
+                                        "Alic": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Iva": {
+                                    "AlicIva[]": {
+                                        "Id": "s:int",
+                                        "BaseImp": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Opcionales": {
+                                    "Opcional[]": {
+                                        "Id": "s:string",
+                                        "Valor": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Compradores": {
+                                    "Comprador[]": {
+                                        "DocTipo": "s:int",
+                                        "DocNro": "s:long",
+                                        "Porcentaje": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "PeriodoAsoc": {
+                                    "FchDesde": "s:string",
+                                    "FchHasta": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "CAEA": "s:string",
+                                "CbteFchHsGen": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECAEARegInformativoResult": {
+                        "FeCabResp": {
+                            "Cuit": "s:long",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "FchProceso": "s:string",
+                            "CantReg": "s:int",
+                            "Resultado": "s:string",
+                            "Reproceso": "s:string",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetResp": {
+                            "FECAEADetResponse[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "Resultado": "s:string",
+                                "Observaciones": {
+                                    "Obs[]": {
+                                        "Code": "s:int",
+                                        "Msg": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "CAEA": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEASolicitar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "Periodo": "s:int",
+                    "Orden": "s:short"
+                },
+                "output": {
+                    "FECAEASolicitarResult": {
+                        "ResultGet": {
+                            "CAEA": "s:string",
+                            "Periodo": "s:int",
+                            "Orden": "s:short",
+                            "FchVigDesde": "s:string",
+                            "FchVigHasta": "s:string",
+                            "FchTopeInf": "s:string",
+                            "FchProceso": "s:string",
+                            "Observaciones": {
+                                "Obs[]": {
+                                    "Code": "s:int",
+                                    "Msg": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEASinMovimientoConsultar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "CAEA": "s:string",
+                    "PtoVta": "s:int"
+                },
+                "output": {
+                    "FECAEASinMovimientoConsultarResult": {
+                        "ResultGet": {
+                            "FECAEASinMov[]": {
+                                "CAEA": "s:string",
+                                "FchProceso": "s:string",
+                                "PtoVta": "s:int",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEASinMovimientoInformar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "PtoVta": "s:int",
+                    "CAEA": "s:string"
+                },
+                "output": {
+                    "FECAEASinMovimientoInformarResult": {
+                        "CAEA": "s:string",
+                        "FchProceso": "s:string",
+                        "PtoVta": "s:int",
+                        "Resultado": "s:string",
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEAConsultar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "Periodo": "s:int",
+                    "Orden": "s:short"
+                },
+                "output": {
+                    "FECAEAConsultarResult": {
+                        "ResultGet": {
+                            "CAEA": "s:string",
+                            "Periodo": "s:int",
+                            "Orden": "s:short",
+                            "FchVigDesde": "s:string",
+                            "FchVigHasta": "s:string",
+                            "FchTopeInf": "s:string",
+                            "FchProceso": "s:string",
+                            "Observaciones": {
+                                "Obs[]": {
+                                    "Code": "s:int",
+                                    "Msg": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetCotizacion": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "MonId": "s:string"
+                },
+                "output": {
+                    "FEParamGetCotizacionResult": {
+                        "ResultGet": {
+                            "MonId": "s:string",
+                            "MonCotiz": "s:double",
+                            "FchCotiz": "s:string",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposTributos": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposTributosResult": {
+                        "ResultGet": {
+                            "TributoTipo[]": {
+                                "Id": "s:short",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposMonedas": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposMonedasResult": {
+                        "ResultGet": {
+                            "Moneda[]": {
+                                "Id": "s:string",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposIva": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposIvaResult": {
+                        "ResultGet": {
+                            "IvaTipo[]": {
+                                "Id": "s:string",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposOpcional": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposOpcionalResult": {
+                        "ResultGet": {
+                            "OpcionalTipo[]": {
+                                "Id": "s:string",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposConcepto": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposConceptoResult": {
+                        "ResultGet": {
+                            "ConceptoTipo[]": {
+                                "Id": "s:int",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetPtosVenta": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetPtosVentaResult": {
+                        "ResultGet": {
+                            "PtoVenta[]": {
+                                "Nro": "s:int",
+                                "EmisionTipo": "s:string",
+                                "Bloqueado": "s:string",
+                                "FchBaja": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposCbte": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposCbteResult": {
+                        "ResultGet": {
+                            "CbteTipo[]": {
+                                "Id": "s:int",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposDoc": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposDocResult": {
+                        "ResultGet": {
+                            "DocTipo[]": {
+                                "Id": "s:int",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposPaises": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposPaisesResult": {
+                        "ResultGet": {
+                            "PaisTipo[]": {
+                                "Id": "s:short",
+                                "Desc": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            }
+        },
+        "ServiceSoap12": {
+            "FECAESolicitar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "FeCAEReq": {
+                        "FeCabReq": {
+                            "CantReg": "s:int",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetReq": {
+                            "FECAEDetRequest[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "ImpTotal": "s:double",
+                                "ImpTotConc": "s:double",
+                                "ImpNeto": "s:double",
+                                "ImpOpEx": "s:double",
+                                "ImpTrib": "s:double",
+                                "ImpIVA": "s:double",
+                                "FchServDesde": "s:string",
+                                "FchServHasta": "s:string",
+                                "FchVtoPago": "s:string",
+                                "MonId": "s:string",
+                                "MonCotiz": "s:double",
+                                "CbtesAsoc": {
+                                    "CbteAsoc[]": {
+                                        "Tipo": "s:int",
+                                        "PtoVta": "s:int",
+                                        "Nro": "s:long",
+                                        "Cuit": "s:string",
+                                        "CbteFch": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Tributos": {
+                                    "Tributo[]": {
+                                        "Id": "s:short",
+                                        "Desc": "s:string",
+                                        "BaseImp": "s:double",
+                                        "Alic": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Iva": {
+                                    "AlicIva[]": {
+                                        "Id": "s:int",
+                                        "BaseImp": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Opcionales": {
+                                    "Opcional[]": {
+                                        "Id": "s:string",
+                                        "Valor": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Compradores": {
+                                    "Comprador[]": {
+                                        "DocTipo": "s:int",
+                                        "DocNro": "s:long",
+                                        "Porcentaje": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "PeriodoAsoc": {
+                                    "FchDesde": "s:string",
+                                    "FchHasta": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECAESolicitarResult": {
+                        "FeCabResp": {
+                            "Cuit": "s:long",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "FchProceso": "s:string",
+                            "CantReg": "s:int",
+                            "Resultado": "s:string",
+                            "Reproceso": "s:string",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetResp": {
+                            "FECAEDetResponse[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "Resultado": "s:string",
+                                "Observaciones": {
+                                    "Obs[]": {
+                                        "Code": "s:int",
+                                        "Msg": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "CAE": "s:string",
+                                "CAEFchVto": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECompTotXRequest": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECompTotXRequestResult": {
+                        "RegXReq": "s:int",
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEDummy": {
+                "input": {},
+                "output": {
+                    "FEDummyResult": {
+                        "AppServer": "s:string",
+                        "DbServer": "s:string",
+                        "AuthServer": "s:string",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECompUltimoAutorizado": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "PtoVta": "s:int",
+                    "CbteTipo": "s:int"
+                },
+                "output": {
+                    "FECompUltimoAutorizadoResult": {
+                        "PtoVta": "s:int",
+                        "CbteTipo": "s:int",
+                        "CbteNro": "s:int",
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECompConsultar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "FeCompConsReq": {
+                        "CbteTipo": "s:int",
+                        "CbteNro": "s:long",
+                        "PtoVta": "s:int",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECompConsultarResult": {
+                        "ResultGet": {
+                            "Concepto": "s:int",
+                            "DocTipo": "s:int",
+                            "DocNro": "s:long",
+                            "CbteDesde": "s:long",
+                            "CbteHasta": "s:long",
+                            "CbteFch": "s:string",
+                            "ImpTotal": "s:double",
+                            "ImpTotConc": "s:double",
+                            "ImpNeto": "s:double",
+                            "ImpOpEx": "s:double",
+                            "ImpTrib": "s:double",
+                            "ImpIVA": "s:double",
+                            "FchServDesde": "s:string",
+                            "FchServHasta": "s:string",
+                            "FchVtoPago": "s:string",
+                            "MonId": "s:string",
+                            "MonCotiz": "s:double",
+                            "CbtesAsoc": {
+                                "CbteAsoc[]": {
+                                    "Tipo": "s:int",
+                                    "PtoVta": "s:int",
+                                    "Nro": "s:long",
+                                    "Cuit": "s:string",
+                                    "CbteFch": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Tributos": {
+                                "Tributo[]": {
+                                    "Id": "s:short",
+                                    "Desc": "s:string",
+                                    "BaseImp": "s:double",
+                                    "Alic": "s:double",
+                                    "Importe": "s:double",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Iva": {
+                                "AlicIva[]": {
+                                    "Id": "s:int",
+                                    "BaseImp": "s:double",
+                                    "Importe": "s:double",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Opcionales": {
+                                "Opcional[]": {
+                                    "Id": "s:string",
+                                    "Valor": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Compradores": {
+                                "Comprador[]": {
+                                    "DocTipo": "s:int",
+                                    "DocNro": "s:long",
+                                    "Porcentaje": "s:double",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "PeriodoAsoc": {
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "Resultado": "s:string",
+                            "CodAutorizacion": "s:string",
+                            "EmisionTipo": "s:string",
+                            "FchVto": "s:string",
+                            "FchProceso": "s:string",
+                            "Observaciones": {
+                                "Obs[]": {
+                                    "Code": "s:int",
+                                    "Msg": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEARegInformativo": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "FeCAEARegInfReq": {
+                        "FeCabReq": {
+                            "CantReg": "s:int",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetReq": {
+                            "FECAEADetRequest[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "ImpTotal": "s:double",
+                                "ImpTotConc": "s:double",
+                                "ImpNeto": "s:double",
+                                "ImpOpEx": "s:double",
+                                "ImpTrib": "s:double",
+                                "ImpIVA": "s:double",
+                                "FchServDesde": "s:string",
+                                "FchServHasta": "s:string",
+                                "FchVtoPago": "s:string",
+                                "MonId": "s:string",
+                                "MonCotiz": "s:double",
+                                "CbtesAsoc": {
+                                    "CbteAsoc[]": {
+                                        "Tipo": "s:int",
+                                        "PtoVta": "s:int",
+                                        "Nro": "s:long",
+                                        "Cuit": "s:string",
+                                        "CbteFch": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Tributos": {
+                                    "Tributo[]": {
+                                        "Id": "s:short",
+                                        "Desc": "s:string",
+                                        "BaseImp": "s:double",
+                                        "Alic": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Iva": {
+                                    "AlicIva[]": {
+                                        "Id": "s:int",
+                                        "BaseImp": "s:double",
+                                        "Importe": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Opcionales": {
+                                    "Opcional[]": {
+                                        "Id": "s:string",
+                                        "Valor": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "Compradores": {
+                                    "Comprador[]": {
+                                        "DocTipo": "s:int",
+                                        "DocNro": "s:long",
+                                        "Porcentaje": "s:double",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "PeriodoAsoc": {
+                                    "FchDesde": "s:string",
+                                    "FchHasta": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "CAEA": "s:string",
+                                "CbteFchHsGen": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FECAEARegInformativoResult": {
+                        "FeCabResp": {
+                            "Cuit": "s:long",
+                            "PtoVta": "s:int",
+                            "CbteTipo": "s:int",
+                            "FchProceso": "s:string",
+                            "CantReg": "s:int",
+                            "Resultado": "s:string",
+                            "Reproceso": "s:string",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "FeDetResp": {
+                            "FECAEADetResponse[]": {
+                                "Concepto": "s:int",
+                                "DocTipo": "s:int",
+                                "DocNro": "s:long",
+                                "CbteDesde": "s:long",
+                                "CbteHasta": "s:long",
+                                "CbteFch": "s:string",
+                                "Resultado": "s:string",
+                                "Observaciones": {
+                                    "Obs[]": {
+                                        "Code": "s:int",
+                                        "Msg": "s:string",
+                                        "targetNSAlias": "tns",
+                                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                    },
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "CAEA": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEASolicitar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "Periodo": "s:int",
+                    "Orden": "s:short"
+                },
+                "output": {
+                    "FECAEASolicitarResult": {
+                        "ResultGet": {
+                            "CAEA": "s:string",
+                            "Periodo": "s:int",
+                            "Orden": "s:short",
+                            "FchVigDesde": "s:string",
+                            "FchVigHasta": "s:string",
+                            "FchTopeInf": "s:string",
+                            "FchProceso": "s:string",
+                            "Observaciones": {
+                                "Obs[]": {
+                                    "Code": "s:int",
+                                    "Msg": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEASinMovimientoConsultar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "CAEA": "s:string",
+                    "PtoVta": "s:int"
+                },
+                "output": {
+                    "FECAEASinMovimientoConsultarResult": {
+                        "ResultGet": {
+                            "FECAEASinMov[]": {
+                                "CAEA": "s:string",
+                                "FchProceso": "s:string",
+                                "PtoVta": "s:int",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEASinMovimientoInformar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "PtoVta": "s:int",
+                    "CAEA": "s:string"
+                },
+                "output": {
+                    "FECAEASinMovimientoInformarResult": {
+                        "CAEA": "s:string",
+                        "FchProceso": "s:string",
+                        "PtoVta": "s:int",
+                        "Resultado": "s:string",
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FECAEAConsultar": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "Periodo": "s:int",
+                    "Orden": "s:short"
+                },
+                "output": {
+                    "FECAEAConsultarResult": {
+                        "ResultGet": {
+                            "CAEA": "s:string",
+                            "Periodo": "s:int",
+                            "Orden": "s:short",
+                            "FchVigDesde": "s:string",
+                            "FchVigHasta": "s:string",
+                            "FchTopeInf": "s:string",
+                            "FchProceso": "s:string",
+                            "Observaciones": {
+                                "Obs[]": {
+                                    "Code": "s:int",
+                                    "Msg": "s:string",
+                                    "targetNSAlias": "tns",
+                                    "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                                },
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetCotizacion": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    },
+                    "MonId": "s:string"
+                },
+                "output": {
+                    "FEParamGetCotizacionResult": {
+                        "ResultGet": {
+                            "MonId": "s:string",
+                            "MonCotiz": "s:double",
+                            "FchCotiz": "s:string",
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposTributos": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposTributosResult": {
+                        "ResultGet": {
+                            "TributoTipo[]": {
+                                "Id": "s:short",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposMonedas": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposMonedasResult": {
+                        "ResultGet": {
+                            "Moneda[]": {
+                                "Id": "s:string",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposIva": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposIvaResult": {
+                        "ResultGet": {
+                            "IvaTipo[]": {
+                                "Id": "s:string",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposOpcional": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposOpcionalResult": {
+                        "ResultGet": {
+                            "OpcionalTipo[]": {
+                                "Id": "s:string",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposConcepto": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposConceptoResult": {
+                        "ResultGet": {
+                            "ConceptoTipo[]": {
+                                "Id": "s:int",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetPtosVenta": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetPtosVentaResult": {
+                        "ResultGet": {
+                            "PtoVenta[]": {
+                                "Nro": "s:int",
+                                "EmisionTipo": "s:string",
+                                "Bloqueado": "s:string",
+                                "FchBaja": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposCbte": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposCbteResult": {
+                        "ResultGet": {
+                            "CbteTipo[]": {
+                                "Id": "s:int",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposDoc": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposDocResult": {
+                        "ResultGet": {
+                            "DocTipo[]": {
+                                "Id": "s:int",
+                                "Desc": "s:string",
+                                "FchDesde": "s:string",
+                                "FchHasta": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            },
+            "FEParamGetTiposPaises": {
+                "input": {
+                    "Auth": {
+                        "Token": "s:string",
+                        "Sign": "s:string",
+                        "Cuit": "s:long",
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                },
+                "output": {
+                    "FEParamGetTiposPaisesResult": {
+                        "ResultGet": {
+                            "PaisTipo[]": {
+                                "Id": "s:short",
+                                "Desc": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Errors": {
+                            "Err[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "Events": {
+                            "Evt[]": {
+                                "Code": "s:int",
+                                "Msg": "s:string",
+                                "targetNSAlias": "tns",
+                                "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                            },
+                            "targetNSAlias": "tns",
+                            "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                        },
+                        "targetNSAlias": "tns",
+                        "targetNamespace": "http://ar.gov.afip.dif.FEV1/"
+                    }
+                }
+            }
+        }
+    }
+}

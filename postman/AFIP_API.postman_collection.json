@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "1d4491d3-26ce-4e4f-adc1-64231d1e5575",
+		"name": "AFIP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "describe wsfev1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/describe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"describe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FEDummy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "auth[key]",
+							"value": "Auth",
+							"type": "text"
+						},
+						{
+							"key": "Auth[Cuit]",
+							"value": "{{cuil}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FEDummy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FEDummy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FECAESolicitar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\": {\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\": {\n        \"Auth\": {\n            \"Cuit\": {{cuil}}\n        },\n        \"FeCAEReq\": {\n            \"FeCabReq\": {\n                \"CantReg\": 1,\n                \"PtoVta\": 1,\n                \"CbteTipo\": 11\n            },\n            \"FeDetReq\": {\n                \"FECAEDetRequest\": [\n                    {\n                        \"Concepto\": 1,\n                        \"DocTipo\": 99,\n                        \"DocNro\": 0,\n                        \"CbteDesde\": 5,\n                        \"CbteHasta\": 5,\n                        \"CbteFch\": \"20210227\",\n                        \"ImpTotal\": 15.45,\n                        \"ImpTotConc\": 0,\n                        \"ImpNeto\": 15.45,\n                        \"ImpOpEx\": 0,\n                        \"ImpTrib\": 0,\n                        \"ImpIVA\": 0,\n                        \"MonId\": \"PES\",\n                        \"MonCotiz\": 1\n                    }\n                ]\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FECAESolicitar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FECAESolicitar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FECAEASolicitar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        },\n        \"Periodo\": \"202102\",\n        \"Orden\": 2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FECAEASolicitar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FECAEASolicitar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FEParamGetTiposTributos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FEParamGetTiposTributos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FEParamGetTiposTributos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FEParamGetTiposCbte",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FEParamGetTiposCbte",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FEParamGetTiposCbte"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FEParamGetPtosVenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FEParamGetPtosVenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FEParamGetPtosVenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FEParamGetTiposDoc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FEParamGetTiposDoc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FEParamGetTiposDoc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FEParamGetTiposMonedas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FEParamGetTiposMonedas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FEParamGetTiposMonedas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint FECompUltimoAutorizado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"auth\":{\n        \"key\": \"Auth\",\n        \"token\": \"Token\",\n        \"sign\": \"Sign\"\n    },\n    \"params\":{\n        \"Auth\":{\n            \"Cuit\": {{cuil}}\n        },\n        \"PtoVta\": 1,\n        \"CbteTipo\": 11\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/wsfev1/FECompUltimoAutorizado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"wsfev1",
+						"FECompUltimoAutorizado"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

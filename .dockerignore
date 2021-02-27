@@ -1,0 +1,7 @@
+.vscode
+cache
+!cache/index.js
+node_modules
+postman
+tools
+.editorconfig

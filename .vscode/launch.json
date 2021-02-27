@@ -10,8 +10,6 @@
 			"name": "Launch Program",
 			"skipFiles": ["<node_internals>/**"],
 			"program": "${workspaceFolder}/server.js",
-			// "args": ["${HOMO: true}"],
-			"env": { "HOMO": "true" }
 		}
 	]
 }

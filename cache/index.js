@@ -4,6 +4,7 @@ const fs = require("fs"),
 class Cache {
 	constructor(name) {
 		this.storePath = path.join(".", "cache", `${name}`);
+		this.clear();
 	}
 
 	getItem(key) {
@@ -25,7 +26,7 @@ class Cache {
 	}
 
 	clear() {
-		return fs.unlink(this.storePath);
+		return fs.writeFileSync(this.storePath, "");
 	}
 }
 

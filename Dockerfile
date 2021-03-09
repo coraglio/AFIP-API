@@ -10,3 +10,7 @@ RUN apk --update add openssl
 
 EXPOSE 5000
 CMD ["npm", "run", "dev"]
+
+# sudo docker build --pull --rm -f "./Dockerfile" -t registry.gitlab.com/fedecoraglio/venta-control-app/afip-api:latest .
+# sudo docker push registry.gitlab.com/fedecoraglio/venta-control-app/afip-api:latest
+# sudo docker run --name afip-api --network host registry.gitlab.com/fedecoraglio/venta-control-app/afip-api:latest

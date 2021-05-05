@@ -55,23 +55,37 @@ class Endpoints {
 				this.createClientForService(service)
 					.then((client) => {
 						var params = { ...req.body.params };
-						console.info(req.body);
+						// console.info(req.body);
 
 						if (!params[`${req.body.auth.key}`])
 							params[`${req.body.auth.key}`] = {};
 
-						params[`${req.body.auth.key}`][`${req.body.auth.token}`] = tokens.token;
-						params[`${req.body.auth.key}`][`${req.body.auth.sign}`] = tokens.sign;
+						params[`${req.body.auth.key}`][
+							`${req.body.auth.token}`
+						] = tokens.token;
+						params[`${req.body.auth.key}`][
+							`${req.body.auth.sign}`
+						] = tokens.sign;
 
-						console.info(params);
+						// console.info(params);
 
-						client[endpoint](params, (err, result) => {
-							try {
-								res.send(result[`${endpoint}Result`]);
-							} catch (e) {
-								res.send(result);
+						client[endpoint](
+							params,
+							(
+								err,
+								result,
+								rawResponse,
+								soapHeader,
+								rawRequest
+							) => {
+								try {
+									// console.log(rawResponse);
+									res.send(result[`${endpoint}Result`]);
+								} catch (e) {
+									res.send(result);
+								}
 							}
-						});
+						);
 					})
 					.catch((err) => {
 						console.info(err);

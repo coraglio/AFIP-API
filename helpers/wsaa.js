@@ -39,7 +39,7 @@ class Tokens {
 		try {
 			const cachedService = this.cache.getItem(service);
 			if (cachedService && cachedService.date) {
-				var hours = Math.abs(new Date() - cachedService.date) / (1000*60);
+				var hours = Math.abs(new Date() - cachedService.date) / (1000*60*60);
 
 				return hours > 12;
 			} else {

@@ -105,9 +105,13 @@ class Endpoints {
 
 		WSAA.generateToken(service)
 			.then((tokens) => {
-				this.createClientForService(service).then((client) => {
-					res.send(client.describe());
-				});
+				this.createClientForService(service)
+					.then((client) => {
+						res.send(client.describe());
+					})
+					.catch((err) => {
+						console.log(err);
+					});
 			})
 			.catch((err) => {
 				res.send({

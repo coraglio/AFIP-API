@@ -39,7 +39,9 @@ class Tokens {
 		try {
 			const cachedService = this.cache.getItem(service);
 			if (cachedService && cachedService.date) {
-				var hours = Math.abs(new Date() - cachedService.date) / (1000*60*60);
+				var hours =
+					Math.abs(new Date() - cachedService.date) /
+					(1000 * 60 * 60);
 
 				return hours > 12;
 			} else {
@@ -118,10 +120,11 @@ class Tokens {
 
 	generateCMS(service) {
 		return new Promise((resolve, reject) => {
-			this.getCurrentTime().then((date) => {
-				var tomorrow = moment(date).add(1, "day");
+			this.getCurrentTime()
+				.then((date) => {
+					var tomorrow = moment(date).add(1, "day");
 
-				var xml = `<?xml version="1.0" encoding="UTF-8" ?>
+					var xml = `<?xml version="1.0" encoding="UTF-8" ?>
 							<loginTicketRequest version="1.0">
 								<header>
 									<uniqueId>${moment().format("X")}</uniqueId>
@@ -131,10 +134,14 @@ class Tokens {
 								<service>${service}</service>
 							</loginTicketRequest>`;
 
-				xml = xml.trim();
+					xml = xml.trim();
 
-				this.encryptXML(xml).then(resolve).catch(reject);
-			});
+					this.encryptXML(xml).then(resolve).catch(reject);
+				})
+				.catch((err) => {
+					console.log(err);
+					reject;
+				});
 		});
 	}
 
@@ -146,48 +153,59 @@ class Tokens {
 
 		return new Promise((resolve, reject) => {
 			if (this.isExpired(service) || refresh === true) {
-				this.createClient().then((client) => {
-					this.generateCMS(service).then((data) => {
-						client.loginCms(
-							{
-								in0: data,
-							},
-							(err, result, raw, soapHeader) => {
-								this.parseXML(raw)
-									.then((res) => {
-										//console.info(res.envelope.body);
-										var xml_response =
-											res.envelope.body.logincmsresponse
-												.logincmsreturn;
+				this.createClient()
+					.then((client) => {
+						this.generateCMS(service).then((data) => {
+							client.loginCms(
+								{
+									in0: data,
+								},
+								(err, result, raw, soapHeader) => {
+									this.parseXML(raw)
+										.then((res) => {
+											//console.info(res.envelope.body);
+											var xml_response =
+												res.envelope.body
+													.logincmsresponse
+													.logincmsreturn;
 
-										if (xml_response) {
-											this.parseXML(xml_response)
-												.then((res) => {
-													//console.info(res.loginticketresponse.header);
-													var credentials =
-														res.loginticketresponse
-															.credentials;
+											if (xml_response) {
+												this.parseXML(xml_response)
+													.then((res) => {
+														//console.info(res.loginticketresponse.header);
+														var credentials =
+															res
+																.loginticketresponse
+																.credentials;
 
-													this.cache.setItem(
-														service,
-														{
-															date: new Date(),
-															credentials: credentials,
-														}
-													);
+														this.cache.setItem(
+															service,
+															{
+																date: new Date(),
+																credentials: credentials,
+															}
+														);
 
-													resolve(credentials);
-												})
-												.catch(reject);
-										} else {
-											reject(res.envelope.body.fault);
-										}
-									})
-									.catch(reject);
-							}
-						);
+														resolve(credentials);
+													})
+													.catch(reject);
+											} else {
+												reject(res.envelope.body.fault);
+											}
+										})
+										.catch(reject);
+								}
+							);
+						})
+						.catch((err) => {
+							console.log(err);
+							reject;
+						});
+					})
+					.catch((err) => {
+						console.log(err);
+						reject;
 					});
-				});
 			} else {
 				resolve(this.cache.getItem(service).credentials);
 			}

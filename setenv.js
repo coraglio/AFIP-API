@@ -8,3 +8,4 @@ process.env.AFIP_URL_SERVICE =
 	"https://wswhomo.afip.gov.ar/{service}/service.asmx?wsdl"; //wsfev1
 process.env.PRIVATE_KEY = path.resolve(__dirname, "./keys/AFIPtest1");
 process.env.PUBLIC_KEY = path.resolve(__dirname, "./keys/AFIPtest1CSR.pem");
+process.env.DB_STRING = "mongodb://localhost/afip-api";

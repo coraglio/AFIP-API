@@ -1,32 +1,53 @@
-const fs = require("fs"),
-	path = require("path");
+const { MongoClient } = require("mongodb");
+
+// Replace the uri string with your MongoDB deployment's connection string.
+const uri = process.env.DB_STRING;
+
+const client = new MongoClient(uri, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
+
+var database = null;
+
+async function connect() {
+	try {
+		await client.connect();
+
+		database = client.db("afip-api");
+	} catch (err) {
+		// Ensures that the client will close when you finish/error
+		console.error(err);
+	}
+}
 
 class Cache {
 	constructor(name) {
-		this.storePath = path.join(".", "cache", `${name}`);
-		this.clear();
-	}
-
-	getItem(key) {
-		let obj = fs.readFileSync(this.storePath, "utf8");
-
-		if (obj && obj != "") {
-			return JSON.parse(obj);
+		if (!database) {
+			connect().then(() => {
+				this.collection = database.collection(name);
+			});
 		}
-
-		return false;
 	}
 
-	setItem(key, value) {
-		if (value) {
-			return fs.writeFileSync(this.storePath, JSON.stringify(value));
-		}
+	async getItem(key) {
+		let res = await this.collection.findOne({ key: key });
 
-		return false;
+		return res;
 	}
 
-	clear() {
-		return fs.writeFileSync(this.storePath, "");
+	async setItem(key, value) {
+		let res = await this.collection.updateOne(
+			{ key: key },
+			{ $set: { value: value } },
+			{ upsert: true }
+		);
+
+		return res;
+	}
+
+	async clear() {
+		await this.collection.drop();
 	}
 }
 

@@ -35,9 +35,9 @@ class Tokens {
 		});
 	}
 
-	isExpired(service) {
+	async isExpired(service) {
 		try {
-			const cachedService = this.cache.getItem(service);
+			const cachedService = await this.cache.getItem(service);
 			if (cachedService && cachedService.date) {
 				var hours =
 					Math.abs(new Date() - cachedService.date) /
@@ -48,6 +48,7 @@ class Tokens {
 				return true;
 			}
 		} catch (e) {
+			console.error(e);
 			return true;
 		}
 	}
@@ -151,63 +152,71 @@ class Tokens {
 			service = "wsfe";
 		}
 
-		return new Promise((resolve, reject) => {
-			if (this.isExpired(service) || refresh === true) {
+		return new Promise(async (resolve, reject) => {
+			let isExpired = await this.isExpired(service);
+			if (isExpired || refresh === true) {
 				this.createClient()
 					.then((client) => {
-						this.generateCMS(service).then((data) => {
-							client.loginCms(
-								{
-									in0: data,
-								},
-								(err, result, raw, soapHeader) => {
-									this.parseXML(raw)
-										.then((res) => {
-											//console.info(res.envelope.body);
-											var xml_response =
-												res.envelope.body
-													.logincmsresponse
-													.logincmsreturn;
+						this.generateCMS(service)
+							.then((data) => {
+								client.loginCms(
+									{
+										in0: data,
+									},
+									(err, result, raw, soapHeader) => {
+										this.parseXML(raw)
+											.then((res) => {
+												//console.info(res.envelope.body);
+												var xml_response =
+													res.envelope.body
+														.logincmsresponse
+														.logincmsreturn;
 
-											if (xml_response) {
-												this.parseXML(xml_response)
-													.then((res) => {
-														//console.info(res.loginticketresponse.header);
-														var credentials =
-															res
-																.loginticketresponse
-																.credentials;
+												if (xml_response) {
+													this.parseXML(xml_response)
+														.then(async (res) => {
+															//console.info(res.loginticketresponse.header);
+															var credentials =
+																res
+																	.loginticketresponse
+																	.credentials;
 
-														this.cache.setItem(
-															service,
-															{
-																date: new Date(),
-																credentials: credentials,
-															}
-														);
+															await this.cache.setItem(
+																service,
+																{
+																	date: new Date(),
+																	credentials:
+																		credentials,
+																}
+															);
 
-														resolve(credentials);
-													})
-													.catch(reject);
-											} else {
-												reject(res.envelope.body.fault);
-											}
-										})
-										.catch(reject);
-								}
-							);
-						})
-						.catch((err) => {
-							console.log(err);
-							reject;
-						});
+															resolve(
+																credentials
+															);
+														})
+														.catch(reject);
+												} else {
+													reject(
+														res.envelope.body.fault
+													);
+												}
+											})
+											.catch(reject);
+									}
+								);
+							})
+							.catch((err) => {
+								console.log(err);
+								reject;
+							});
 					})
 					.catch((err) => {
 						console.log(err);
 						reject;
 					});
 			} else {
-				resolve(this.cache.getItem(service).credentials);
+				let token = await this.cache.getItem(service);
+				resolve(token.credentials);
 			}
 		});
 	}
